@@ -48,10 +48,12 @@ const server = new ApolloServer({
   context: ({ req }) => ({ req }),
 });
 
+let port = process.env.PORT || 4000;
+
 mongoose
   .connect(MONGODB, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    return server.listen({ port: process.env.PORT }).then((res) => {
+    return server.listen({ port: port }).then((res) => {
       console.log(`Server ruinning at ${res.url}`);
     });
   });
