@@ -2,10 +2,10 @@ const { ApolloServer, gql } = require("apollo-server");
 const mongoose = require("mongoose");
 
 //secrets
-const { MONGODB } = require("./config");
+const { MONGODB } = require("../config");
 
 //resolvers and typeDefs
-const resolvers = require("./server/resolvers");
+const resolvers = require("../server/resolvers");
 
 const typeDefs = gql`
   type Post {
